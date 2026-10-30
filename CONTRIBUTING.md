@@ -1,6 +1,6 @@
 # Contributing to Kiln Suite
 
-Thanks for taking an interest. This is a small project with a few firm rules that keep it easy to run and hack on.
+Thanks for taking an interest. This is a small project with a few firm rules that keep it easy to run and hack on. Everyone taking part is expected to follow the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Ground rules
 - **Plain JavaScript, no build step.** Everything loads from `index.html` with classic `<script>` tags and runs from `file://`. No ES modules, no bundlers, no TypeScript, no CDN or npm runtime dependencies. Workers and AudioWorklets are created from Blob/data URLs for the same reason.

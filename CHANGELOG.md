@@ -5,6 +5,7 @@
 The first release of the Kiln Suite: **Gesso** (layered image editor) and **Cutline** (multitrack video editor), under the MIT License.
 
 ### Highlights
+- Full project documentation: README with feature inventories and keyboard references for both apps, CONTRIBUTING, CODE_OF_CONDUCT, CHANGELOG.
 - Windows icons (`Gesso/gesso.ico`, `Cutline/cutline.ico`) and a one-click desktop/Start-menu shortcut installer (`tools/Create Desktop Shortcuts.bat`) that opens each app as its own window.
 - Both apps run from a folder in Chrome or Edge with no build step and no dependencies.
 - Shared `imagefx.js` (22 adjustments, 58 filters) and `animenc.js` (GIF/APNG) libraries.

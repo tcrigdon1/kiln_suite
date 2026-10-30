@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gesso — Kiln Suite</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 8l9-4 9 4-9 4z' fill='%23f0913a'/%3E%3Cpath d='M3 12.5l9 4 9-4' fill='none' stroke='%233dbfae' stroke-width='2'/%3E%3Cpath d='M3 16.5l9 4 9-4' fill='none' stroke='%23c8bdb1' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../shared/theme.css">
+<link rel="stylesheet" href="css/gesso.css">
+</head>
+<body>
+<div id="app">
+  <div class="menubar" id="menubar"></div>
+  <div id="optionsbar" class="optionsbar"></div>
+  <div id="main">
+    <div id="toolstrip" class="toolstrip"></div>
+    <div id="center">
+      <div id="doctabs" class="doctabs"></div>
+      <div id="workspace">
+        <div id="ruler-corner" title="Double-click: clear guides"></div>
+        <canvas id="ruler-h" class="ruler"></canvas>
+        <canvas id="ruler-v" class="ruler"></canvas>
+        <canvas id="view"></canvas>
+        <div id="welcome"></div>
+      </div>
+    </div>
+    <div id="dock" class="dock"></div>
+  </div>
+  <div class="statusbar" id="statusbar">
+    <span class="st-zoom-wrap"><input id="st-zoom" type="number" title="Zoom %"><span>%</span></span>
+    <span id="st-size"></span>
+    <span id="st-cursor"></span>
+    <span id="st-color"></span>
+    <span style="flex:1"></span>
+    <span id="st-mem" class="st-mem" title="Pixel memory of this document"></span>
+    <span id="st-tool"></span>
+  </div>
+</div>
+
+<!-- Shared effects library (filters & adjustments) -->
+<script src="../shared/imagefx.js"></script>
+
+<!-- Core -->
+<script src="js/core/namespace.js"></script>
+<script src="js/core/icons.js"></script>
+<script src="js/core/paths.js"></script>
+<script src="js/core/layers.js"></script>
+<script src="js/core/selection.js"></script>
+<script src="js/core/effects.js"></script>
+<script src="js/core/compositor.js"></script>
+<script src="js/core/document.js"></script>
+<script src="js/core/embed.js"></script>
+
+<!-- UI building blocks -->
+<script src="js/ui/menu.js"></script>
+<script src="js/ui/dialogs.js"></script>
+<script src="js/ui/params.js"></script>
+<script src="js/ui/colorpicker.js"></script>
+<script src="js/ui/viewport.js"></script>
+
+<!-- Tools -->
+<script src="js/tools/tools.js"></script>
+<script src="js/tools/transform.js"></script>
+<script src="js/tools/meshwarp.js"></script>
+<script src="js/tools/select.js"></script>
+<script src="js/tools/misc.js"></script>
+<script src="js/tools/paint.js"></script>
+<script src="js/tools/warp.js"></script>
+<script src="js/tools/text.js"></script>
+<script src="js/tools/shapes.js"></script>
+
+<!-- Application -->
+<script src="js/app/cmd.js"></script>
+<script src="js/app/ops.js"></script>
+<script src="js/tools/measure.js"></script>
+<script src="js/app/commands.js"></script>
+<script src="js/app/filters.js"></script>
+<script src="js/app/smartfill.js"></script>
+<script src="js/app/subject.js"></script>
+<script src="js/app/fileio.js"></script>
+<script src="js/app/lut.js"></script>
+<script src="js/app/cascale.js"></script>
+<script src="js/app/photomerge.js"></script>
+<script src="js/app/vector.js"></script>
+<script src="js/ui/panels.js"></script>
+<script src="js/ui/panel-layers.js"></script>
+<script src="js/ui/panel-props.js"></script>
+<script src="js/ui/panel-misc.js"></script>
+<script src="js/ui/panel-comps.js"></script>
+<script src="../shared/animenc.js"></script>
+<script src="js/app/anim.js"></script>
+<script src="js/tools/brushes-extra.js"></script>
+<script src="js/app/automate.js"></script>
+<script src="js/app/fx-extra.js"></script>
+<script src="js/app/menus.js"></script>
+<script src="js/app/appdialogs.js"></script>
+<script src="js/app/main.js"></script>
+<script src="js/app/workspace.js"></script>
+<script src="js/app/actions.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+const { ROOT } = require('../env.js');
+const { chromium } = require('playwright');
+(async () => {
+  const browser = await chromium.launch();
+  const page = await browser.newPage({ viewport: { width: 1600, height: 950 } });
+  const errors = [];
+  page.on('console', (m) => { if (m.type() === 'error') errors.push('console: ' + m.text()); });
+  page.on('pageerror', (e) => errors.push('pageerror: ' + e.message + '\n' + e.stack));
+  await page.goto('file://' + ROOT + '/Gesso/index.html');
+  await page.waitForTimeout(400);
+  const step = async (name, fn) => { try { await fn(); console.log('ok   ', name); } catch (e) { console.log('FAIL ', name, e.message.split('\n')[0]); errors.push(name + ': ' + e.message); } };
+  const ev = (fn, arg) => page.evaluate(fn, arg);
+  const assert = (c, m) => { if (!c) throw new Error('assert: ' + m); };
+  await ev(() => Gesso.App.createDoc({ name: 'S', w: 300, h: 200, dpi: 72, bg: 'white' }));
+  await step('snapshot + restore', async () => {
+    await ev(() => Gesso.app.doc.makeSnapshot());
+    await ev(() => Gesso.App.fillWith('#ff0000', 'Fill'));
+    let p = await ev(() => { const d = Gesso.app.doc; Gesso.Compositor.update(d); return Array.from(d.composite.getContext('2d').getImageData(5, 5, 1, 1).data); });
+    assert(p[1] === 0, 'red ' + p);
+    await page.click('.dock-tabs .tab >> text=History').catch(() => {});
+    await ev(() => Gesso.app.doc.restoreSnapshot(Gesso.app.doc.snapshots[0].id));
+    p = await ev(() => { const d = Gesso.app.doc; d.invalidate(); Gesso.Compositor.update(d); return Array.from(d.composite.getContext('2d').getImageData(5, 5, 1, 1).data); });
+    assert(p[1] === 255, 'white again ' + p);
+    await ev(() => Gesso.Cmd.run('edit.undo'));
+    p = await ev(() => { const d = Gesso.app.doc; d.invalidate(); Gesso.Compositor.update(d); return Array.from(d.composite.getContext('2d').getImageData(5, 5, 1, 1).data); });
+    assert(p[1] === 0, 'undo restore → red ' + p);
+  });
+  await step('save/load selection channel + project roundtrip', async () => {
+    await ev(() => { const d = Gesso.app.doc; d.setSelection(Gesso.Sel.make(Gesso.Sel.ellipseMask(d.width, d.height, 20, 20, 100, 80), d.width, d.height)); d.commit('s', () => d.alphaChannels.push({ id: 'x', name: 'Oval', sel: d.selection })); Gesso.Cmd.run('select.none'); Gesso.Cmd.run('select.load', 'x'); });
+    const b = await ev(() => Gesso.app.doc.selection.bounds);
+    assert(b.w >= 99 && b.w <= 101, JSON.stringify(b));
+    const n = await ev(async () => { const data = await Gesso.FileIO.serialize(Gesso.app.doc); const d2 = await Gesso.FileIO.loadProject(JSON.parse(JSON.stringify(data)), 'rt'); return d2.alphaChannels.length; });
+    assert(n === 1, 'channels ' + n);
+    await ev(() => { const d = Gesso.app.docs[0]; Gesso.App.setActiveDoc(d); d.commit('Image Size', () => Gesso.Ops.resizeImage(d, 150, 100)); });
+    const b2 = await ev(() => Gesso.app.doc.alphaChannels[0].sel.bounds);
+    assert(b2.w <= 52 && b2.w >= 48, 'scaled channel ' + JSON.stringify(b2));
+  });
+  console.log(errors.length ? '\nERRORS:\n' + errors.join('\n') : '\nNO ERRORS');
+  await browser.close();
+})();

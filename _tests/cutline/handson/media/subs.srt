@@ -1,0 +1,12 @@
+1
+00:00:00,500 --> 00:00:02,000
+Hello from captions
+
+2
+00:00:02,500 --> 00:00:04,000
+Second line
+with two rows
+
+3
+00:00:05,000 --> 00:00:07,000
+Third caption

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cutline — Kiln Suite</title>
+<link rel="stylesheet" href="../shared/theme.css">
+<link rel="icon" type="image/png" href="cutline-icon.png">
+<link rel="stylesheet" href="css/cutline.css">
+</head>
+<body>
+<div id="app">
+  <div class="menubar" id="menubar"></div>
+  <div id="workspace">
+    <div id="leftcol">
+      <div id="toprow">
+        <section class="panel" id="p-bin"></section>
+        <div class="split-v" data-split="bin" title="Drag to resize · double-click to reset layout"></div>
+        <section class="panel" id="p-source"></section>
+        <div class="split-v" data-split="source"></div>
+        <section class="panel" id="p-program"></section>
+      </div>
+      <div class="split-h" data-split="top"></div>
+      <section class="panel" id="p-timeline"></section>
+    </div>
+    <div class="split-v" data-split="right"></div>
+    <section class="panel" id="p-right"></section>
+  </div>
+  <div class="statusbar" id="statusbar"></div>
+</div>
+
+<script src="js/core/util.js"></script>
+<script src="js/core/icons.js"></script>
+<script src="js/model/project.js"></script>
+<script src="js/model/keyframes.js"></script>
+<script src="js/model/timeline.js"></script>
+<script src="js/model/history.js"></script>
+<script src="js/io/storage.js"></script>
+<script src="js/render/titles.js"></script>
+<script src="js/media/media.js"></script>
+<script src="js/render/spectrum.js"></script>
+<script src="js/media/demux.js"></script>
+<script src="js/media/gpu.js"></script>
+<script src="js/media/frame-decoder.js"></script>
+<script src="js/media/audio-stream.js"></script>
+<script src="js/render/effects.js"></script>
+<script src="js/render/color-extras.js"></script>
+<script src="js/render/masks.js"></script>
+<script src="js/render/tracker.js"></script>
+<script src="js/render/transitions.js"></script>
+<script src="js/render/fx-pack.js"></script>
+<script src="js/render/scene.js"></script>
+<script src="js/render/compositor-gl.js"></script>
+<script src="js/render/compositor-2d.js"></script>
+<script src="js/playback/sources.js"></script>
+<script src="js/audio/mixer.js"></script>
+<script src="js/playback/engine.js"></script>
+<script src="js/ui/core.js"></script>
+<script src="js/ui/actions.js"></script>
+<script src="js/audio/ducking.js"></script>
+<script src="js/ui/commands.js"></script>
+<script src="js/ui/menus.js"></script>
+<script src="js/ui/bin.js"></script>
+<script src="js/ui/monitors.js"></script>
+<script src="js/ui/timeline-view.js"></script>
+<script src="js/ui/graph-editor.js"></script>
+<script src="js/ui/inspector.js"></script>
+<script src="js/ui/effects-panel.js"></script>
+<script src="js/ui/color-panel.js"></script>
+<script src="js/ui/audio-panel.js"></script>
+<script src="js/ui/side-panels.js"></script>
+<script src="js/ui/dialogs.js"></script>
+<script src="js/io/project-io.js"></script>
+<script src="js/ui/extras.js"></script>
+<script src="js/ui/workspace.js"></script>
+<script src="js/ui/multicam.js"></script>
+<script src="js/ui/motion.js"></script>
+<script src="js/ui/auto-cut.js"></script>
+<script src="js/io/interchange.js"></script>
+<script src="js/ui/presets-qc.js"></script>
+<script src="js/audio/loudness.js"></script>
+<script src="js/audio/eq-graph.js"></script>
+<script src="js/ui/color-extras.js"></script>
+<script src="js/playback/render-cache.js"></script>
+<script src="js/export/sink.js"></script>
+<script src="js/export/webm-muxer.js"></script>
+<script src="js/export/mp4-muxer.js"></script>
+<script src="js/export/exporter.js"></script>
+<script src="js/export/export-extras.js"></script>
+<script src="js/media/proxy.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

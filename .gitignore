@@ -1,0 +1,15 @@
+node_modules/
+# test artefacts (regenerated on every run)
+_tests/**/shots/
+_tests/**/out/
+_tests/**/downloads/
+_tests/imagefx/out/
+_tests/watch/out/
+# large generated test media (see _tests/make-media.sh)
+_tests/cutline/longform/media/
+_tests/cutline/pass2/media/sync5m.webm
+*.log
+.DS_Store
+Thumbs.db
+_tests/cutline/handson/Save Test.kcut
+_tests/cutline/handson/out-captions.srt

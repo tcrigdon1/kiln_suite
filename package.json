@@ -1,0 +1,21 @@
+{
+  "name": "kiln-suite",
+  "version": "1.0.0",
+  "description": "Kiln Suite — Gesso (layered image editor) and Cutline (multitrack video editor). Plain JavaScript, runs from a folder in Chrome or Edge, no build step.",
+  "private": true,
+  "license": "MIT",
+  "author": "Thomas Rigdon",
+  "repository": { "type": "git", "url": "https://github.com/tcrigdon1/kiln_suite.git" },
+  "homepage": "https://github.com/tcrigdon1/kiln_suite#readme",
+  "scripts": {
+    "test": "node _tests/run.js",
+    "test:gesso": "node _tests/run.js gesso",
+    "test:cutline": "node _tests/run.js cutline",
+    "test:quick": "node _tests/run.js quick",
+    "test:media": "bash _tests/make-media.sh"
+  },
+  "devDependencies": {
+    "playwright": "^1.56.0"
+  },
+  "engines": { "node": ">=18" }
+}

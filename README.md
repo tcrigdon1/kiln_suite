@@ -1,8 +1,6 @@
 # Kiln Suite
 
-Kiln Suite is two free, open-source creative apps written from scratch in plain JavaScript and run straight from a folder in your browser: **Gesso**, a layered raster image editor, and **Cutline**, a multitrack non-linear video editor. Their workflows will feel familiar if you have used the mainstream image and video editors — layers, masks and adjustment layers on one side; a source/program monitor, a track-based timeline and an inspector on the other — but every line of code, every icon, the theme and the file formats are original.
-
-> Kiln Suite is an independent project. It is not affiliated with, endorsed by or sponsored by Adobe Inc. "Photoshop" and "Premiere Pro" are trademarks of Adobe Inc. and are mentioned here only to describe the kind of workflow the apps follow.
+Kiln Suite is two free, open-source creative apps written from scratch in plain JavaScript and run straight from a folder in your browser: **Gesso**, a layered raster image editor, and **Cutline**, a multitrack non-linear video editor. Their workflows will feel familiar if you have used the mainstream image and video editors — layers, masks and adjustment layers on one side; a source/program monitor, a track-based timeline and an inspector on the other — but every line of code, every icon, the theme and the file formats are original. Kiln Suite is an independent project with no affiliation to any other editor's publisher.
 
 There is nothing to install and no server: open `index.html`, and your files never leave your computer.
 
@@ -285,4 +283,4 @@ Everything in this repository is original work: the application code, the `share
 - **Development dependency.** The test suites use [Playwright](https://playwright.dev) (Apache-2.0), installed by `npm install`; it is not part of the apps and is not distributed with them.
 - **Test media.** Every clip, image and sound under `_tests/` is synthetic — ffmpeg test sources, generated images and tones — and is covered by the same MIT License; nothing is sampled from other works.
 - **Fonts.** The apps use the fonts installed on your system and bundle none.
-- **Trademarks.** "Kiln Suite", "Gesso" and "Cutline" are the names of this project. Adobe, Photoshop and Premiere Pro are trademarks of Adobe Inc.; NVENC and GeForce of NVIDIA Corporation; Quick Sync of Intel Corporation; Radeon and AMF of Advanced Micro Devices, Inc.; Chrome of Google LLC; Edge of Microsoft Corporation. They are mentioned only to describe compatibility and are not affiliated with this project.
+- **Trademarks.** "Kiln Suite", "Gesso" and "Cutline" are the names of this project. NVENC and GeForce are trademarks of NVIDIA Corporation; Quick Sync of Intel Corporation; Radeon and AMF of Advanced Micro Devices, Inc.; Chrome of Google LLC; Edge of Microsoft Corporation. They are mentioned only to describe hardware and browser compatibility; none of those companies is affiliated with this project.
